@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import '/Users/Manuel/WebstormProjects/business_card_react/src/index.css';
+import picture from '/Users/Manuel/WebstormProjects/business_card_react/src/picture.jpg';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import store from './Store/index';
+import { Provider } from 'react-redux';
+
+ReactDOM.render(<Provider store = {store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
