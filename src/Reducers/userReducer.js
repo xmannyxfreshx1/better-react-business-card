@@ -1,4 +1,4 @@
-import { UPDATE_NAME } from "../Actions/userActions";
+import { UPDATE_NAME } from "../Actions/userAction";
 
 
 export function userReducer(state = '', {type, payload}) {
