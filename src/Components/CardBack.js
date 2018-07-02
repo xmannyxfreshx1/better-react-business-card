@@ -14,14 +14,14 @@ export default class CardBack extends React.Component {
                     <form formAction='' className='card-form'>
                         <div className='row'>
                             <div className='col-xs-6'>
-                                <form onChange={this.props.onUpdateUser}>
+                                <form onSubmit={this.props.handleFormSubmit} onChange={this.props.onUpdateUser}>
                                     <input name="username" type='text' placeholder='Your first name...' required />
                                 </form>
 
                             </div>
 
                             <div className='col-xs-6'>
-                                <form onChange={this.props.onUpdateLastname}>
+                                <form onSubmit={this.props.handleFormSubmit} onChange={this.props.onUpdateLastname}>
                                     <input name="last" type='text' placeholder='Your last name...' required />
                                 </form>
                             </div>
@@ -30,7 +30,7 @@ export default class CardBack extends React.Component {
                         <div className='row'>
                             <div className='col-xs-6'>
 
-                                <form onChange={this.props.onUpdateEmail}>
+                                <form onSubmit={this.props.handleFormSubmit} onChange={this.props.onUpdateEmail}>
                                     <input name="email" type='email' placeholder='Your email...' required />
                                 </form>
 
@@ -38,7 +38,7 @@ export default class CardBack extends React.Component {
 
                             <div className='col-xs-6'>
 
-                                <form onChange={this.props.onUpdateSubject}>
+                                <form onSubmit={this.props.handleFormSubmit} onChange={this.props.onUpdateSubject}>
                                     <input name="subject" type='text' placeholder='Subject...' required />
                                 </form>
 

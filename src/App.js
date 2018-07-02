@@ -21,8 +21,8 @@ class App extends Component {
         this.onUpdateSubject = this.onUpdateSubject.bind(this);
         this.onUpdateMessage = this.onUpdateMessage.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
-        //this.onButtonSubmit = this.onButtonSubmit.bind(this);
     }
 
     onUpdateUser(event){
@@ -73,13 +73,18 @@ class App extends Component {
         });
     }
 
+    handleFormSubmit(event){
+        event.preventDefault();
+        alert('Please complete the form and click Send Message!')
+    }
+
 
 
     render() {
         return (
             <div className='card-container'>
                 <div className='card-body'>
-                    <CardBack handleSubmit={this.handleSubmit}  onUpdateMessage={this.onUpdateMessage} onUpdateSubject={this.onUpdateSubject} onUpdateEmail={this.onUpdateEmail} onUpdateLastname={this.onUpdateLastname} onUpdateUser = {this.onUpdateUser} />
+                    <CardBack handleFormSubmit={this.handleFormSubmit} handleSubmit={this.handleSubmit}  onUpdateMessage={this.onUpdateMessage} onUpdateSubject={this.onUpdateSubject} onUpdateEmail={this.onUpdateEmail} onUpdateLastname={this.onUpdateLastname} onUpdateUser = {this.onUpdateUser} />
 
                     <CardFront />
                 </div>
