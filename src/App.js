@@ -64,7 +64,7 @@ class App extends Component {
         const subject = this.props.subject;
         const message = this.props.message;
 
-        const form = await axios.post('https://xmannyxfreshx1.github.io/better-react-business-card/api/form', {
+        const form = await axios.post('/api/form', {
             name,
             email,
             subject,
