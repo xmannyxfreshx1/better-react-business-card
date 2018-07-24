@@ -57,21 +57,37 @@ class App extends Component {
         console.log(event.target.value);
     }
 
-    async handleSubmit(event){
+    async handleSubmit(event) {
         event.preventDefault();
         const name = this.props.firstName + ' ' + this.props.lastName;
         const email = this.props.email;
         const subject = this.props.subject;
         const message = this.props.message;
 
-        const form = await axios.post('/api/form', {
-            name,
-            email,
-            subject,
-            message,
+        // const form = await axios.post('https://s5bc0zc0e4.execute-api.us-east-1.amazonaws.com/Production', {
+        //     name,
+        //     email,
+        //     subject,
+        //     message,
+        //
+        // });
 
-        });
+        await fetch('https://s5bc0zc0e4.execute-api.us-east-1.amazonaws.com/Production', {
+            method: 'post',
+            body:JSON.stringify({
+                "from": email, // sender address
+                "subject":`New Contact: fromemail@example.com`, // Subject line
+                "text": 'New contact from: fromemail@example.com \n Hello world!'
+            }),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+
+            }
+        );
     }
+
 
     handleFormSubmit(event){
         event.preventDefault();
