@@ -72,16 +72,19 @@ class App extends Component {
         //
         // });
 
-        await fetch('https://s5bc0zc0e4.execute-api.us-east-1.amazonaws.com/Production', {
-            method: 'post',
+        //https://jfal42shpl.execute-api.us-east-1.amazonaws.com/dev/
+
+        await fetch('https://l7dca5n56h.execute-api.us-east-1.amazonaws.com/dev', {
+            method: 'POST',
             body:JSON.stringify({
                 "from": email, // sender address
-                "subject":`New Contact: fromemail@example.com`, // Subject line
-                "text": 'New contact from: fromemail@example.com \n Hello world!'
+                "subject":subject, // Subject line
+                "text": `New contact from: ${name}  \n ${message}`
             }),
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Host':'apigateway.us-east-1.amazonaws.com'
             }
 
             }
