@@ -64,16 +64,6 @@ class App extends Component {
         const subject = this.props.subject;
         const message = this.props.message;
 
-        // const form = await axios.post('https://s5bc0zc0e4.execute-api.us-east-1.amazonaws.com/Production', {
-        //     name,
-        //     email,
-        //     subject,
-        //     message,
-        //
-        // });
-
-        //https://jfal42shpl.execute-api.us-east-1.amazonaws.com/dev/
-
         await fetch('https://l7dca5n56h.execute-api.us-east-1.amazonaws.com/dev', {
             method: 'POST',
             body:JSON.stringify({
