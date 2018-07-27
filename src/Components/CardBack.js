@@ -45,7 +45,7 @@ export default class CardBack extends React.Component {
                             </div>
                         </div>
 
-                        <form onChange={this.props.onUpdateMessage}>
+                        <form className={'textarea'} onChange={this.props.onUpdateMessage}>
                             <textarea name="message" type='text' placeholder='Your message here...' required />
                         </form>
 
